@@ -13,7 +13,7 @@ steps:
       - "deploy"
       - "nextjs-cloudrun-service"
       - "--image"
-      - "gcr.io/$PROJECT_ID/nextjs-with-cloudrun"
+      - "gcr.io/$PROJECT_ID/nextjs-with-cloudrun:$COMMIT_SHA"
       - "--region"
       - "asia-northeast1"
       - "--platform"
