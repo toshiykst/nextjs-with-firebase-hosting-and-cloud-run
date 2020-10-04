@@ -22,5 +22,5 @@ steps:
   - name: "node:latest"
     entrypoint: "yarn"
     args:
-      - "deploy-hosting"
+      - "deploy:public"
 images: ["gcr.io/$PROJECT_ID/nextjs-with-cloudrun:$COMMIT_SHA"]
