@@ -18,6 +18,7 @@ steps:
       - "asia-northeast1"
       - "--platform"
       - "managed"
+      - "--allow-unauthenticated"
   - name: "node:10-slim"
     entrypoint: "yarn"
     args:
