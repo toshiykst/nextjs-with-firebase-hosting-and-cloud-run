@@ -19,8 +19,6 @@ steps:
       - "--platform"
       - "managed"
       - "--allow-unauthenticated"
-      # - "--memory"
-      # - "512"
   - name: "node:latest"
     entrypoint: "yarn"
     args:
