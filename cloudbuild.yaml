@@ -18,4 +18,8 @@ steps:
       - "asia-northeast1"
       - "--platform"
       - "managed"
+  - name: "node:10-slim"
+    entrypoint: "yarn"
+    args:
+      - "deploy-hosting"
 images: ["gcr.io/$PROJECT_ID/nextjs-with-cloudrun:$COMMIT_SHA"]

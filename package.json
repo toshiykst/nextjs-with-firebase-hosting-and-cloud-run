@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "ts-node server.ts",
     "start:production": "NODE_ENV=production ts-node server.ts -p ${PORT}",
+    "deploy:hosting": "firebase deploy --only hosting",
     "type-check": "tsc"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "firebase-tools": "^8.11.2",
     "typescript": "4.0"
   },
   "license": "MIT"
