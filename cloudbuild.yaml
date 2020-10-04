@@ -22,5 +22,9 @@ steps:
   - name: "node:latest"
     entrypoint: "yarn"
     args:
+      - "install"
+  - name: "node:latest"
+    entrypoint: "yarn"
+    args:
       - "deploy:public"
 images: ["gcr.io/$PROJECT_ID/nextjs-with-cloudrun:$COMMIT_SHA"]
