@@ -1,14 +1,20 @@
-# Use the official lightweight Node.js 12 image.
-# https://hub.docker.com/_/node
-FROM node:10-slim
+# Build stage
+FROM node:10-alpine AS builder
+
+WORKDIR /build
+
+COPY . .
+RUN yarn && yarn build
+
+# Exec stage
+FROM node:10-alpine
 
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json yarn.lock ./
+RUN yarn --production
 
-COPY . .
-# RUN npm install && npm run build
-RUN yarn && yarn build
+COPY --from=builder /build/.next .next
+COPY --from=builder /build/server.js server.js
 
-# start app
-CMD [ "yarn", "start:production" ]
+CMD ["yarn", "start:production"]
